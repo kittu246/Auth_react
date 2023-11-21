@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import SignUp from './Components/SignUp';
+import Login from './Components/Login';
+import Zuku from './Components/Zuku';
+import LogOut from './Components/LogOut';
 
-function App() {
+const App = () => {
+
+  const [token,SetToken] = useState('');
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+        <SignUp SetToken={SetToken}/>
+        <Login SetToken={SetToken}/>
+        <Zuku token={token}/>
+        <LogOut token={token}/>
+        </div>
+  )
 }
 
-export default App;
+export default App
